@@ -1,0 +1,143 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.footer {
+    margin-top: 18rem;
+
+    .contenido-bmi {
+        width: 100%;
+        max-width: 75rem;
+        padding: 1rem 2rem;
+    }
+
+    .contenido-gender,
+    .contenido-age,
+    .contenido-muscle,
+    .contenido-pregnancy,
+    .contenido-race {
+        width: 100%;
+        max-width: 68rem;
+        border: 2px solid black;
+        border-radius: 25px;
+        padding: 1rem 2rem;
+    }
+
+    .titulo {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .titulo svg {
+        height: 5rem;
+        width: 5rem;
+    }
+
+    .contenido-gender {
+        position: relative;
+        left: 85rem;
+        top: -15rem;
+    }
+
+    .contenido-age {
+        position: relative;
+        top: -10rem;
+        left: 30rem;
+    }
+
+    .contenido-muscle {
+        position: relative;
+        top: -43rem;
+        left: 105rem;
+    }
+
+    .contenido-pregnancy {
+        position: relative;
+        top: -35rem;
+        left: 10rem;
+    }
+
+    .contenido-race {
+        position: relative;
+        top: -68rem;
+        left: 85rem;
+    }
+
+    // MIXIN
+    @include m.minTablet{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 2rem;
+        .contenido-bmi{
+            grid-column: 1/3;   
+            justify-self: center;
+        }
+        .contenido-gender,
+        .contenido-age,
+        .contenido-muscle,
+        .contenido-pregnancy,
+        .contenido-race{
+            position: static;
+        }
+        .contenido-race{
+            grid-column: 1/3;
+            justify-self: center;
+        }
+    }
+    @include m.minCelular{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 2rem;
+        .contenido-gender,
+        .contenido-age,
+        .contenido-muscle,
+        .contenido-pregnancy,
+        .contenido-race{
+            position: static;
+        }
+    }
+}
+
+.contenido-gender {
+    .titulo {
+        svg {
+            color: orange;
+        }
+    }
+}
+
+.contenido-age {
+    .titulo {
+        svg {
+            color: aqua;
+        }
+    }
+}
+
+.contenido-muscle {
+    .titulo {
+        svg {
+            color: violet;
+        }
+    }
+}
+
+.contenido-pregnancy {
+    .titulo {
+        svg {
+            color: salmon;
+        }
+    }
+}
+
+.contenido-race {
+    .titulo {
+        svg {
+            color: brown;
+        }
+    }
+}
+
+
+
+

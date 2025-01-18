@@ -1,0 +1,25 @@
+@use 'variables' as v;
+
+@mixin tablet {
+    @media (max-width:v.$tablet) {
+        @content;
+    }
+}
+
+@mixin celular {
+    @media (max-width:v.$celular) {
+        @content;
+    }
+}
+
+@mixin minTablet {
+    @media (min-width:780px) and (max-width:1800px) {
+        @content;
+    }
+}
+
+@mixin minCelular {
+    @media (min-width:225px) and (max-width:800px) {
+        @content;
+    }
+}

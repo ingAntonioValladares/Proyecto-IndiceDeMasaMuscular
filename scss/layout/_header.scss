@@ -1,0 +1,99 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+.contenedor{
+    width: min(v.$min-width,90%);
+    margin: 0 auto;
+}
+.contenido-header{
+    display: flex;
+    align-content: center;
+    .contenido-header__fondo{
+        background-color: v.$color-principal;
+        flex-basis: calc(70%);
+        align-content: center;
+        height: 98rem;
+        border-bottom-right-radius: 50px;
+    }
+    .contenido-header__descripcion{
+        width: 68rem;
+        margin: 0 500px 0 200px;
+    }
+    .contenido-header__formulario{
+        position: relative;
+        left: -45rem;
+        background-color: white;
+        flex-basis: calc(30%);
+        height: 70rem;
+        padding: 2rem;
+        border-radius: 25px;
+        align-self: center;
+        align-content: center;
+        box-shadow: 5px 5px 18px 1px rgba(0,0,0,.2);
+    }
+    .contenido-header__formulario__datos__metric input,
+    .contenido-header__formulario__datos__imperial input{
+        height: 4rem;
+        width: 8rem;
+    }
+    .contenido-header__formulario__datos__height,
+    .contenido-header__formulario__datos__weight{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .8rem;
+    }
+    .number{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .number input{
+        border-radius: 25px;
+        padding: 0 2rem;
+    }
+    .contenido-header__formulario__datos{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 2rem;
+        padding: 0;
+    }
+    .contenido-header__formulario__welcome{
+        background-color: v.$color-azul;
+        padding: 2rem;
+        border-top-right-radius: 150px;
+        border-bottom-right-radius: 150px;
+        color: v.$color-blanco;
+    }
+}
+
+// RESPONSIVE DESIGN
+@include m.celular{
+    .contenido-header{
+        display: flex;
+        flex-direction: column;
+        .contenido-header__fondo{
+            background-color: v.$color-principal;
+            flex-basis: calc(50%);
+            align-content: center;
+            height: 0;
+            border-bottom-right-radius: 50px;
+        }
+        .contenido-header__descripcion{
+            width: min(480px,95%);
+            margin: 0 auto;
+        }
+        .contenido-header__formulario{
+            position: static;
+            width: min(480px,95%);
+            margin: 0 auto;
+        }
+        .contenido-header__formulario__datos{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+
+
+

@@ -1,0 +1,50 @@
+@use 'variables' as v;
+
+html {
+    box-sizing: border-box;
+    font-size: 62.2%;
+}
+
+body {
+    font-size: 16px;
+    margin: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+h1 {
+    font-size: v.$fontSize-h1;
+    margin: 0;
+}
+
+h2 {
+    font-size: v.$fontSize-h2;
+}
+
+h3 {
+    font-size: v.$fontSize-h3;
+}
+
+p,
+label {
+    font-size: v.$fontSize-p-label;
+}
+
+p {
+    text-align: justify;
+}
+
+input{
+    height: 10rem;
+    width: 35rem;
+    font-size: 5rem;
+    padding: 2.2rem 0;
+}
+img{
+    max-width: 35rem;
+    width: v.$width-imagenes;
+}
